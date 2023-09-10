@@ -2,16 +2,26 @@ import { Link } from 'react-router-dom';
 import styled from 'styled-components';
 
 export const StyledHeader = styled.header`
+    display: flex;
+    align-items: center;
+    padding: 10px 20px;
     background-color: #333;
-    padding: 1rem 0;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 `;
 
-export const NavList = styled.ul`
-    list-style-type: none;
-    padding: 0;
+export const NavContainer = styled.nav`
     display: flex;
-    justify-content: center;
+    align-items: center; // вирівнює елементи по вертикалі
+    gap: 15px;
+`;
+
+export const NavList = styled.ul`
+    display: flex;
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    align-items: center;
+    gap: 15px;
 `;
 
 export const NavItem = styled.li`

@@ -1,10 +1,12 @@
 import React from 'react';
-import { StyledHeader, NavList, NavItem, StyledLink } from './Header.styled';
+import { StyledHeader, NavList, NavItem, StyledLink, NavContainer } from './Header.styled';
+import { FiFilm } from 'react-icons/fi';
 
 const Header = () => {
     return (
         <StyledHeader>
-            <nav>
+            <NavContainer>
+                <FiFilm size="40px" color="white" />
                 <NavList>
                     <NavItem>
                         <StyledLink to="/">Home</StyledLink>
@@ -13,7 +15,7 @@ const Header = () => {
                         <StyledLink to="/movies">Movies</StyledLink>
                     </NavItem>
                 </NavList>
-            </nav>
+            </NavContainer>
         </StyledHeader>
     );
 }
