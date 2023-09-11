@@ -1,0 +1,9 @@
+import styled from 'styled-components';
+
+export const AppContainer = styled.div`
+    background-color: #F0F8FF;
+    color: #000080;
+    font-family: Arial, sans-serif;
+    padding: 20px;
+    color: white;
+`;

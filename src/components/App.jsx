@@ -3,6 +3,7 @@ import { Routes, Route } from 'react-router-dom';
 import NotFound from './NotFound/NotFound';
 import Header from './Header/Header';
 import Loader from './Loader/Loader';
+import { AppContainer } from './App.styled';
 
 const Home = lazy(() => import('../pages/Home'));
 const Movies = lazy(() => import('../pages/Movies'));
@@ -12,7 +13,7 @@ const Reviews = lazy(() => import('../pages/Reviews'));
 
 const App = () => {
   return (
-    <div>
+    <AppContainer>
       <Header />
       <Suspense fallback={<Loader />}>
         <Routes>
@@ -25,7 +26,7 @@ const App = () => {
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Suspense>
-    </div>
+    </AppContainer>
   );
 }
 

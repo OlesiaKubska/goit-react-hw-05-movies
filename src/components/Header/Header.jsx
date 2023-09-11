@@ -1,4 +1,5 @@
 import React from 'react';
+import { Outlet } from 'react-router-dom';
 import { StyledHeader, NavList, NavItem, StyledLink, NavContainer } from './Header.styled';
 import { FiFilm } from 'react-icons/fi';
 
@@ -16,6 +17,7 @@ const Header = () => {
                     </NavItem>
                 </NavList>
             </NavContainer>
+            <Outlet />
         </StyledHeader>
     );
 }

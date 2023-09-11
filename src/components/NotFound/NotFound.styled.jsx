@@ -11,10 +11,11 @@ export const NotFoundContainer = styled.div`
 
 export const ErrorMessage = styled.h1`
     font-size: 4rem;
-    color: #FF5733;
+    color: #000080;
     margin-bottom: 1rem;
 `;
 
 export const ErrorText = styled.p`
     font-size: 1.5rem;
+    color: #000080;
 `;
