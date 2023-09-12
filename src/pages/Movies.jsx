@@ -1,9 +1,10 @@
 import React from 'react';
+import SearchForm from 'components/SearchForm/SearchForm';
 
 const Movies = () => {
     return (
         <div>
-            Movies
+            <SearchForm />
         </div>
     );
 }
