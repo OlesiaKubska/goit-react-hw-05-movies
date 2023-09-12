@@ -5,5 +5,4 @@ export const AppContainer = styled.div`
     color: #000080;
     font-family: Arial, sans-serif;
     padding: 20px;
-    color: white;
 `;
