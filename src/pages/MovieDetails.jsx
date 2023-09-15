@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { useParams, useLocation, Navigate } from 'react-router-dom';
+import { Link, Outlet, useParams, useLocation, Navigate } from 'react-router-dom';
 import { getMovieDetails } from 'service/api';
 import Loader from 'components/Loader/Loader';
 import MovieInfo from 'components/MovieInfo/MovieInfo';
@@ -36,6 +36,20 @@ const MovieDetails = () => {
             {loading && <Loader />}
             {error && <Navigate to={HOME} replace />}
             <MovieInfo movieDetails={movieDetails} />
+
+            <div>
+                <h2>Additional information</h2>
+                <ul>
+                    <li>
+                        <Link to={`${movieId}/cast`}>Cast</Link>
+                    </li>
+                    <li>
+                        <Link to={`${movieId}/reviews`}>Reviews</Link>
+                    </li>
+                </ul>
+            </div>
+
+            <Outlet />
         </div>
     );
 }

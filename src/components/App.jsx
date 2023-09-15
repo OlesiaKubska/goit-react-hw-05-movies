@@ -4,6 +4,7 @@ import NotFound from './NotFound/NotFound';
 import Header from './Header/Header';
 import Loader from './Loader/Loader';
 import { AppContainer } from './App.styled';
+import { GlobalStyle } from 'GlobalStyle';
 
 const Home = lazy(() => import('../pages/Home'));
 const Movies = lazy(() => import('../pages/Movies'));
@@ -26,6 +27,7 @@ const App = () => {
           <Route path="*" element={<NotFound />} />
         </Routes>
       </Suspense>
+      <GlobalStyle />
     </AppContainer>
   );
 }

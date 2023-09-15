@@ -13,8 +13,8 @@ const Home = () => {
             try {
                 const data = await getTrendingMovies();
                 setMovies(data.results);
-            } catch (err) {
-                setError(err.message);
+            } catch (error) {
+                setError(error);
             } finally {
                 setLoading(false);
             }
@@ -22,9 +22,6 @@ const Home = () => {
 
         fetchTrendingMovies();
     }, []);
-
-    if (loading) return <Loader />;
-    if (error) return <p>Error: {error}</p>;
 
     return (
         <div>
