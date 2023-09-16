@@ -13,7 +13,7 @@ const Reviews = () => {
         const fetchMovieReviews = async () => {
             try {
                 const data = await getMovieReviews(movieId);
-                setReviews(data.results);
+                setReviews(data);
             } catch (error) {
                 setError(error);
             } finally {
@@ -26,7 +26,6 @@ const Reviews = () => {
 
     return (
         <div>
-            <h2>Reviews</h2>
             {loading && <Loader />}
             {error && <p>Error loading reviews</p>}
             <ul>

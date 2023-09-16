@@ -6,3 +6,7 @@ export const AppContainer = styled.div`
     font-family: Arial, sans-serif;
     padding: 20px;
 `;
+
+export const Container = styled.div`
+    padding-top: 20px;
+`;

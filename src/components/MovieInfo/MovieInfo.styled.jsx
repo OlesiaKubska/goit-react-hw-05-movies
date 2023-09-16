@@ -52,3 +52,15 @@ export const Genres = styled.p`
     font-weight: bold;
     margin-bottom: 40px;
 `;
+
+export const ListCast = styled.ul`
+    list-style-type: none;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    gap: 10px;
+`;
+
+export const ListItemCast = styled.li`
+    // margin-bottom: 10px;
+`;

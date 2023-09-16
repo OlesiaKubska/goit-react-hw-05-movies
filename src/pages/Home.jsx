@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { getTrendingMovies } from 'service/api';
 import MovieList from 'components/MovieList/MovieList';
 import Loader from 'components/Loader/Loader';
+import { Container } from 'components/App.styled';
 
 const Home = () => {
     const [movies, setMovies] = useState([]);
@@ -24,11 +25,12 @@ const Home = () => {
     }, []);
 
     return (
-        <div>
+        <Container>
+            <h2>Trending today</h2>
             {error && <h2>Trending today</h2>}
             {loading && <Loader />}
             <MovieList movies={movies} />
-        </div>
+        </Container>
     );
 }
 

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import { getMovieCredits } from 'service/api';
 import Loader from 'components/Loader/Loader';
+import { ListCast } from 'components/MovieInfo/MovieInfo.styled';
 
 const Cast = () => {
     const { movieId } = useParams();
@@ -13,7 +14,7 @@ const Cast = () => {
         const fetchMovieCredits = async () => {
             try {
                 const data = await getMovieCredits(movieId);
-                setCast(data.cast);
+                setCast(data);
             } catch (error) {
                 setError(error);
             } finally {
@@ -28,18 +29,19 @@ const Cast = () => {
         <div>
             {loading && <Loader />}
             {error && <p>Error loading cast</p>}
-            <ul>
+            <ListCast>
                 {cast.map(actor => (
                     <li key={actor.id}>
                         <img
-                            src={`https://image.tmdb.org/t/p/w500${actor.profile_path}`}
+                            src={actor.profile_path ? `https://image.tmdb.org/t/p/w500${actor.profile_path}` : 'path_to_default_image'}
+                            // src={`https://image.tmdb.org/t/p/w500${actor.profile_path}`}
                             alt={actor.name}
                             width={200}
                         />
                         {actor.name}
                     </li>
                 ))}
-            </ul>
+            </ListCast>
         </div>
     );
 }

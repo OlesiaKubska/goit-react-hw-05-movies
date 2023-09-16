@@ -10,7 +10,6 @@ export const List = styled.ul`
 
 export const ListItem = styled.li`
     margin-bottom: 10px;
-
 `;
 
 export const StyledLink = styled(Link)`
@@ -20,4 +19,14 @@ export const StyledLink = styled(Link)`
         text-decoration: underline;
         color: #007bff;
     }
+`;
+
+export const ListReviews = styled.ul`
+    padding-left: 40px;
+    padding-bottom: 20px;
+    margin: 0;
+`;
+
+export const ListItemReviews = styled.li`
+    margin-bottom: 10px;
 `;
