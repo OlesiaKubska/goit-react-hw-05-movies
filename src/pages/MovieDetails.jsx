@@ -4,7 +4,7 @@ import { getMovieDetails } from 'service/api';
 import Loader from 'components/Loader/Loader';
 import MovieInfo from 'components/MovieInfo/MovieInfo';
 import { GoBackBtn } from 'components/GoBackBtn/GoBackBtn';
-import { ListItemReviews, ListReviews } from 'components/MovieList/MovieList.styled';
+import { InfoContainer, ListItemReviews, ListReviews } from 'components/MovieInfo/MovieInfo.styled';
 
 const MovieDetails = () => {
     const { movieId } = useParams();
@@ -38,16 +38,17 @@ const MovieDetails = () => {
             {error && <Navigate to={HOME} replace />}
             <MovieInfo movieDetails={movieDetails} />
             
-            <h2>Additional information</h2>
-            <ListReviews>
-                <ListItemReviews>
-                    <Link to="cast" state={location.state}>Cast</Link>
-                </ListItemReviews>
-                <ListItemReviews>
-                    <Link to="reviews" state={location.state}>Reviews</Link>
-                </ListItemReviews>
-                
-            </ListReviews>
+            <InfoContainer>
+                <h2>Additional information</h2>
+                <ListReviews>
+                    <ListItemReviews>
+                        <Link to="cast" state={location.state}>Cast</Link>
+                    </ListItemReviews>
+                    <ListItemReviews>
+                        <Link to="reviews" state={location.state}>Reviews</Link>
+                    </ListItemReviews>
+                </ListReviews>
+            </InfoContainer>
 
             <Suspense fallback={<Loader />}>
                 <Outlet />

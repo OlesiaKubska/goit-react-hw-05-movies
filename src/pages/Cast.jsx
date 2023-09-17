@@ -34,11 +34,11 @@ const Cast = () => {
                     <li key={actor.id}>
                         <img
                             src={actor.profile_path ? `https://image.tmdb.org/t/p/w500${actor.profile_path}` : 'path_to_default_image'}
-                            // src={`https://image.tmdb.org/t/p/w500${actor.profile_path}`}
                             alt={actor.name}
                             width={200}
                         />
                         {actor.name}
+                        <p>Character: {actor.character}</p>
                     </li>
                 ))}
             </ListCast>

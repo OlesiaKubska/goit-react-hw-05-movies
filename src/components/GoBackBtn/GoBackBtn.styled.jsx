@@ -12,6 +12,7 @@ export const GoBackButton = styled(Link)`
     cursor: pointer;
     transition: background-color 0.3s ease;
     margin-top: 10px;
+    text-decoration: none;
 
     svg {
         fill: #000080;

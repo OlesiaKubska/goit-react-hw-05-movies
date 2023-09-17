@@ -54,13 +54,39 @@ export const Genres = styled.p`
 `;
 
 export const ListCast = styled.ul`
-    list-style-type: none;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
-    gap: 10px;
+    gap: 20px;
 `;
 
-export const ListItemCast = styled.li`
-    // margin-bottom: 10px;
+export const ListReviews = styled.ul`
+    padding-left: 40px;
+    padding-bottom: 20px;
+    margin: 0;
+`;
+
+export const ListItemReviews = styled.li`
+    margin-bottom: 20px;
+`;
+
+export const InfoContainer = styled.div`
+    position: relative;
+
+    &::after {
+        content: '';
+        display: block;
+        width: 100%;
+        height: 1px;
+        background-color: #000080;
+        position: absolute;
+        bottom: 20px;
+        left: 0;
+    }
+`;
+
+export const ListReviewsInfo = styled.ul`
+    padding-left: 40px;
+    padding-bottom: 20px;
+    margin: 0;
 `;
