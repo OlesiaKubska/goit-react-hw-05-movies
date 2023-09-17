@@ -33,7 +33,7 @@ const Cast = () => {
                 {cast.map(actor => (
                     <li key={actor.id}>
                         <img
-                            src={actor.profile_path ? `https://image.tmdb.org/t/p/w500${actor.profile_path}` : '/public/images/default_actor.jpg'}
+                            src={actor.profile_path ? `https://image.tmdb.org/t/p/w500${actor.profile_path}` : '/goit-react-hw-05-movies/images/default_actor.jpg'}
                             alt={actor.name}
                             width={200}
                         />
