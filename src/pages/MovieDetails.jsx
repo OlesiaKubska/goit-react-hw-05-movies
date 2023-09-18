@@ -1,4 +1,4 @@
-import React, { Suspense, useState, useEffect } from 'react';
+import React, { Suspense, useState, useEffect, useRef } from 'react';
 import { Link, Outlet, useParams, useLocation, Navigate } from 'react-router-dom';
 import { getMovieDetails } from 'service/api';
 import Loader from 'components/Loader/Loader';
@@ -28,11 +28,11 @@ const MovieDetails = () => {
         fetchMovieDetails();
     }, [movieId]);
 
-    const goBackLink = location?.state?.from || "/";
+    const goBackLink = useRef(location?.state?.from ?? "/");
 
     return (
         <div>
-            <GoBackBtn path={goBackLink}>Go back</GoBackBtn>
+            <GoBackBtn path={goBackLink.current}>Go back</GoBackBtn>
             {loading && <Loader />}
             {error && <Navigate to={"/"} replace />}
             <MovieInfo movieDetails={movieDetails} />
