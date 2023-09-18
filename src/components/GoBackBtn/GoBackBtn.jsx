@@ -1,5 +1,4 @@
 import React from 'react';
-import PropTypes from 'prop-types';
 import { AiOutlineArrowLeft } from 'react-icons/ai';
 import { GoBackButton } from './GoBackBtn.styled';
 
