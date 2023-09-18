@@ -21,15 +21,10 @@ export const getTrendingMovies = async (page = 1) => {
 };
 
 // Запит на пошук фільму за ключовим словом
-export const searchMovies = async (page = 1, query = '') => {
+export const searchMovies = async (query = '') => {
     try {
-        const url = query
-            ? "/search/movie" 
-            : "/trending/movie/day";
-            
-        const { data } = await axios.get(url, {
+        const { data } = await axios.get("/search/movie", {
             params: {
-                page,
                 query,
             },
         });

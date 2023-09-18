@@ -1,23 +1,16 @@
 import React, { useState } from 'react';
 import { Input, Form, Button } from './SearchForm.styled';
-import { searchMovies } from 'service/api';
-import MovieList from 'components/MovieList/MovieList';
 
-const SearchForm = () => {
+const SearchForm = ({ onSubmit }) => {
     const [searchQuery, setSearchQuery] = useState('');
-    const [searchResults, setSearchResults] = useState([]);
 
-    const handleSubmit = async (event) => {
+    const handleSubmit = (event) => {
         event.preventDefault();
 
-        if (searchQuery.trim() !== '') {
-            try {
-                const data = await searchMovies(1, searchQuery); 
-                setSearchResults(data.results);
-            } catch (error) {
-                console.error('Error searching movies:', error);
-            }
+        if (searchQuery.trim() === '') {
+            return alert("Please enter a search term.");
         }
+        onSubmit(searchQuery);
     };
 
     const handleInputChange = (event) => {
@@ -33,7 +26,6 @@ const SearchForm = () => {
                 onChange={handleInputChange}
             />
             <Button type="submit">Search</Button>
-            <MovieList movies={searchResults} />
         </Form>
     );
 };

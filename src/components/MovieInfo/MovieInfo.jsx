@@ -1,6 +1,7 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import { MovieInfoContainer, MovieImage, MovieDetails, MovieTitle, UserScore, Overview, Genres } from './MovieInfo.styled';
+import defaultMovieImage from 'images/default_movies.jpg';
 
 const MovieInfo = ({ movieDetails }) => {
     const {
@@ -19,7 +20,7 @@ const MovieInfo = ({ movieDetails }) => {
             {movieDetails && (
                 <MovieInfoContainer>
                     <MovieImage
-                        src={`https://image.tmdb.org/t/p/w500/${poster_path}`}
+                        src={poster_path ? `https://image.tmdb.org/t/p/w500/${poster_path}` : defaultMovieImage}
                         alt={title}
                     />
                     <MovieDetails>

@@ -11,8 +11,3 @@ export const GoBackBtn = ({ path, children }) => {
         </GoBackButton>
     );
 };
-
-GoBackBtn.propTypes = {
-    path: PropTypes.string.isRequired,
-    children: PropTypes.node
-};

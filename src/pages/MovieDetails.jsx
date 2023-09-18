@@ -28,24 +28,23 @@ const MovieDetails = () => {
         fetchMovieDetails();
     }, [movieId]);
 
-    const HOME = "/";
-    const goBackLink = location?.state?.from ?? HOME;
+    const goBackLink = location?.state?.from || "/";
 
     return (
         <div>
             <GoBackBtn path={goBackLink}>Go back</GoBackBtn>
             {loading && <Loader />}
-            {error && <Navigate to={HOME} replace />}
+            {error && <Navigate to={"/"} replace />}
             <MovieInfo movieDetails={movieDetails} />
             
             <InfoContainer>
                 <h2>Additional information</h2>
                 <ListReviews>
                     <ListItemReviews>
-                        <Link to="cast" state={location.state}>Cast</Link>
+                        <Link to="cast">Cast</Link>
                     </ListItemReviews>
                     <ListItemReviews>
-                        <Link to="reviews" state={location.state}>Reviews</Link>
+                        <Link to="reviews">Reviews</Link>
                     </ListItemReviews>
                 </ListReviews>
             </InfoContainer>

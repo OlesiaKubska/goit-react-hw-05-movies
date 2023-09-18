@@ -3,6 +3,7 @@ import { useParams } from 'react-router-dom';
 import { getMovieCredits } from 'service/api';
 import Loader from 'components/Loader/Loader';
 import { ListCast } from 'components/MovieInfo/MovieInfo.styled';
+import defaultActorImage from '../images/default_actor.jpg';
 
 const Cast = () => {
     const { movieId } = useParams();
@@ -33,7 +34,7 @@ const Cast = () => {
                 {cast.map(actor => (
                     <li key={actor.id}>
                         <img
-                            src={actor.profile_path ? `https://image.tmdb.org/t/p/w500${actor.profile_path}` : '/goit-react-hw-05-movies/images/default_actor.jpg'}
+                            src={actor.profile_path ? `https://image.tmdb.org/t/p/w500${actor.profile_path}` : defaultActorImage}
                             alt={actor.name}
                             width={200}
                         />
